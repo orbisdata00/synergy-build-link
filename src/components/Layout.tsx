@@ -50,9 +50,6 @@ export default function Layout({
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
-                <span className="text-xl font-bold text-primary-foreground">CC</span>
-              </div>
               <span className="text-3xl text-slate-600 font-extrabold">CommunityConnect</span>
             </Link>
 
