@@ -91,7 +91,7 @@ export default function Index() {
       <div className="rounded-2xl bg-gradient-to-r from-primary to-secondary p-8 text-primary-foreground shadow-medium">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold">Welcome back, John! 👋</h1>
+            <h1 className="text-3xl font-bold">Welcome back, John!</h1>
             <p className="mt-2 text-lg opacity-90">Here's what's happening in your network today</p>
           </div>
           <Award className="h-16 w-16 opacity-50" />
