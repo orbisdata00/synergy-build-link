@@ -104,10 +104,9 @@ export default function Index() {
         {/* Recent Activities */}
         <Card className="lg:col-span-2 shadow-soft">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-primary" />
-              Recent Activities
-            </CardTitle>
+          <CardTitle>
+            Recent Activities
+          </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
