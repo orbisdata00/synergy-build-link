@@ -1,24 +1,50 @@
 import { Link, useLocation } from "react-router-dom";
 import { Home, Calendar, Users, Layers, BookOpen, DollarSign, MessageSquare, Award, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const navigation = [
-  { name: "Dashboard", href: "/", icon: Home },
-  { name: "Events", href: "/events", icon: Calendar },
-  { name: "Mentors", href: "/mentors", icon: Users },
-  { name: "Communities", href: "/communities", icon: Layers },
-  { name: "Resources", href: "/resources", icon: BookOpen },
-  { name: "Funding", href: "/funding", icon: DollarSign },
-  { name: "Messages", href: "/messages", icon: MessageSquare },
-  { name: "Membership", href: "/membership", icon: Award },
-  { name: "Admin", href: "/admin", icon: Shield },
-];
-
-export default function Layout({ children }: { children: React.ReactNode }) {
+const navigation = [{
+  name: "Dashboard",
+  href: "/",
+  icon: Home
+}, {
+  name: "Events",
+  href: "/events",
+  icon: Calendar
+}, {
+  name: "Mentors",
+  href: "/mentors",
+  icon: Users
+}, {
+  name: "Communities",
+  href: "/communities",
+  icon: Layers
+}, {
+  name: "Resources",
+  href: "/resources",
+  icon: BookOpen
+}, {
+  name: "Funding",
+  href: "/funding",
+  icon: DollarSign
+}, {
+  name: "Messages",
+  href: "/messages",
+  icon: MessageSquare
+}, {
+  name: "Membership",
+  href: "/membership",
+  icon: Award
+}, {
+  name: "Admin",
+  href: "/admin",
+  icon: Shield
+}];
+export default function Layout({
+  children
+}: {
+  children: React.ReactNode;
+}) {
   const location = useLocation();
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Top Navigation */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
         <div className="container flex h-16 items-center justify-between px-4">
@@ -27,29 +53,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
                 <span className="text-xl font-bold text-primary-foreground">CC</span>
               </div>
-              <span className="text-xl font-bold text-foreground">CommunityConnect</span>
+              <span className="text-3xl text-slate-600 font-extrabold">CommunityConnect</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-1">
-              {navigation.map((item) => {
-                const Icon = item.icon;
-                const isActive = location.pathname === item.href;
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={cn(
-                      "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all",
-                      isActive
-                        ? "bg-primary text-primary-foreground shadow-soft"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    )}
-                  >
+              {navigation.map(item => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.href;
+              return <Link key={item.name} to={item.href} className={cn("flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all", isActive ? "bg-primary text-primary-foreground shadow-soft" : "text-muted-foreground hover:text-foreground hover:bg-muted")}>
                     <Icon className="h-4 w-4" />
                     {item.name}
-                  </Link>
-                );
-              })}
+                  </Link>;
+            })}
             </nav>
           </div>
 
@@ -65,6 +80,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Main Content */}
       <main className="container px-4 py-8">{children}</main>
-    </div>
-  );
+    </div>;
 }
