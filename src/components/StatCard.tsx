@@ -10,16 +10,18 @@ interface StatCardProps {
 
 export default function StatCard({ title, value, icon: Icon, trend }: StatCardProps) {
   return (
-    <Card className="border-border shadow-soft hover:shadow-medium transition-shadow">
+    <Card className="border border-white/20 backdrop-blur-lg bg-white/10 shadow-soft hover:shadow-medium transition-all">
       <CardContent className="p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm font-medium text-muted-foreground">{title}</p>
-            <p className="mt-2 text-3xl font-bold text-foreground">{value}</p>
-            {trend && <p className="mt-1 text-xs text-primary">{trend}</p>}
+        <div className="flex items-center gap-4">
+          <div className="rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm p-4 border border-white/30">
+            <Icon className="h-8 w-8 text-primary" />
           </div>
-          <div className="rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 p-3">
-            <Icon className="h-6 w-6 text-primary" />
+          <div className="flex-1">
+            <div className="flex items-baseline gap-3">
+              <p className="text-3xl font-bold text-foreground">{value}</p>
+              <p className="text-sm font-medium text-muted-foreground">{title}</p>
+            </div>
+            {trend && <p className="mt-2 text-xs text-primary font-medium">{trend}</p>}
           </div>
         </div>
       </CardContent>
