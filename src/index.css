@@ -8,80 +8,84 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 30 100% 97%;
-    --foreground: 255 11% 18%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 255 11% 18%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 255 11% 18%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 12 100% 69%;
+    --primary: 211 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 28 98% 73%;
-    --secondary-foreground: 255 11% 18%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 30 60% 95%;
-    --muted-foreground: 255 11% 45%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 28 98% 73%;
-    --accent-foreground: 255 11% 18%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 40% 90%;
-    --input: 30 40% 90%;
-    --ring: 12 100% 69%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 211 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom semantic tokens */
-    --coral: 12 100% 69%;
-    --peach: 28 98% 73%;
-    --warm-bg: 30 100% 97%;
-    --deep-text: 255 11% 18%;
+    /* Apple-inspired semantic tokens */
+    --apple-blue: 211 100% 50%;
+    --apple-gray: 0 0% 96%;
+    --apple-dark: 0 0% 13%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(12 100% 69%), hsl(28 98% 73%));
-    --gradient-subtle: linear-gradient(180deg, hsl(30 100% 97%), hsl(30 60% 95%));
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.2;
     
-    /* Shadows */
-    --shadow-soft: 0 2px 8px -2px hsl(12 100% 69% / 0.1);
-    --shadow-medium: 0 4px 16px -4px hsl(12 100% 69% / 0.15);
-    --shadow-hover: 0 8px 24px -8px hsl(12 100% 69% / 0.2);
+    /* Shadows - Apple style */
+    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   }
 
   .dark {
-    --background: 255 11% 10%;
-    --foreground: 30 100% 97%;
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
 
-    --card: 255 11% 14%;
-    --card-foreground: 30 100% 97%;
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 255 11% 14%;
-    --popover-foreground: 30 100% 97%;
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 12 100% 69%;
+    --primary: 211 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 28 98% 73%;
-    --secondary-foreground: 255 11% 18%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 255 11% 20%;
-    --muted-foreground: 30 60% 70%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 28 98% 73%;
-    --accent-foreground: 255 11% 18%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 255 11% 20%;
-    --input: 255 11% 20%;
-    --ring: 12 100% 69%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 211 100% 50%;
+    
+    /* Dark mode glass */
+    --glass-bg: 0 0% 14% / 0.7;
+    --glass-border: 0 0% 100% / 0.1;
   }
 }
 
@@ -92,5 +96,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

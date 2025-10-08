@@ -82,15 +82,12 @@ export default function Index() {
     experience: "10+ years",
     availability: "Available"
   }];
-  return <div className="space-y-8">
+  return <div className="space-y-12 pb-12">
       {/* Welcome Section */}
-      <div className="rounded-2xl bg-gradient-to-r from-primary to-secondary p-8 text-primary-foreground shadow-medium">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold">Welcome back, User!</h1>
-            <p className="mt-2 text-lg opacity-90">Here's what's happening in your network today</p>
-          </div>
-          <Award className="h-16 w-16 opacity-50" />
+      <div className="rounded-3xl bg-card p-12 shadow-large border border-border/50">
+        <div className="max-w-2xl">
+          <h1 className="text-5xl font-semibold text-foreground tracking-tight">Welcome back, User!</h1>
+          <p className="mt-4 text-xl text-muted-foreground">Here's what's happening in your network today</p>
         </div>
       </div>
 
@@ -100,26 +97,26 @@ export default function Index() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-8 lg:grid-cols-3">
         {/* Recent Activities */}
-        <Card className="lg:col-span-2 shadow-soft">
-          <CardHeader>
-          <CardTitle>
-            Recent Activities
-          </CardTitle>
+        <Card className="lg:col-span-2 shadow-medium border-0">
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl font-semibold tracking-tight">
+              Recent Activities
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              {recentActivities.map((activity, index) => <div key={index} className="flex items-start gap-4 rounded-lg border border-border p-4 transition-all hover:border-primary/50 hover:shadow-soft">
+            <div className="space-y-3">
+              {recentActivities.map((activity, index) => <div key={index} className="flex items-start gap-4 rounded-2xl bg-secondary/50 p-6 transition-all hover:bg-secondary hover:shadow-soft">
                   <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <h4 className="font-semibold text-foreground">{activity.title}</h4>
-                      <Badge variant="secondary" className="text-xs">
+                    <div className="flex items-center gap-3">
+                      <h4 className="font-semibold text-foreground text-base">{activity.title}</h4>
+                      <Badge variant="secondary" className="text-xs font-medium px-2.5 py-0.5">
                         {activity.badge}
                       </Badge>
                     </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{activity.description}</p>
-                    <p className="mt-2 text-xs text-muted-foreground">{activity.time}</p>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{activity.description}</p>
+                    <p className="mt-3 text-xs text-muted-foreground">{activity.time}</p>
                   </div>
                 </div>)}
             </div>
@@ -127,53 +124,57 @@ export default function Index() {
         </Card>
 
         {/* Sidebar Content */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {/* Upcoming Events */}
-          <Card className="shadow-soft">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-primary" />
+          <Card className="shadow-medium border-0">
+            <CardHeader className="pb-6">
+              <CardTitle className="flex items-center gap-3 text-xl font-semibold tracking-tight">
+                <div className="rounded-lg bg-primary/10 p-2">
+                  <Calendar className="h-5 w-5 text-primary" />
+                </div>
                 Upcoming Events
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {upcomingEvents.map((event, index) => <div key={index} className="rounded-lg border border-border p-3 transition-all hover:border-primary/50">
-                    <h4 className="font-semibold text-foreground">{event.title}</h4>
-                    <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                {upcomingEvents.map((event, index) => <div key={index} className="rounded-2xl bg-secondary/50 p-4 transition-all hover:bg-secondary hover:shadow-soft">
+                    <h4 className="font-semibold text-foreground text-sm">{event.title}</h4>
+                    <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
                       <span>{event.date}</span>
                       <span>{event.attendees} attending</span>
                     </div>
                   </div>)}
               </div>
-              <Button className="mt-4 w-full bg-primary hover:bg-primary/90" size="sm">
+              <Button className="mt-6 w-full bg-primary hover:bg-primary/90 shadow-soft font-medium" size="lg">
                 View All Events
               </Button>
             </CardContent>
           </Card>
 
           {/* Mentor Recommendations */}
-          <Card className="shadow-soft">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-primary" />
+          <Card className="shadow-medium border-0">
+            <CardHeader className="pb-6">
+              <CardTitle className="flex items-center gap-3 text-xl font-semibold tracking-tight">
+                <div className="rounded-lg bg-primary/10 p-2">
+                  <Users className="h-5 w-5 text-primary" />
+                </div>
                 Recommended Mentors
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {mentorRecommendations.map((mentor, index) => <div key={index} className="rounded-lg border border-border p-3 transition-all hover:border-primary/50">
-                    <h4 className="font-semibold text-foreground">{mentor.name}</h4>
-                    <p className="mt-1 text-xs text-muted-foreground">{mentor.expertise}</p>
-                    <div className="mt-2 flex items-center justify-between">
+                {mentorRecommendations.map((mentor, index) => <div key={index} className="rounded-2xl bg-secondary/50 p-4 transition-all hover:bg-secondary hover:shadow-soft">
+                    <h4 className="font-semibold text-foreground text-sm">{mentor.name}</h4>
+                    <p className="mt-2 text-xs text-muted-foreground">{mentor.expertise}</p>
+                    <div className="mt-3 flex items-center justify-between">
                       <span className="text-xs text-muted-foreground">{mentor.experience}</span>
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="secondary" className="text-xs font-medium">
                         {mentor.availability}
                       </Badge>
                     </div>
                   </div>)}
               </div>
-              <Button variant="outline" className="mt-4 w-full border-primary text-primary hover:bg-primary/10" size="sm">
+              <Button variant="outline" className="mt-6 w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium" size="lg">
                 Browse All Mentors
               </Button>
             </CardContent>

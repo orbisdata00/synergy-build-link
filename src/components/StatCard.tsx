@@ -12,18 +12,20 @@ export default function StatCard({
   icon: Icon,
   trend
 }: StatCardProps) {
-  return <Card className="border border-white/20 backdrop-blur-lg bg-white/10 shadow-soft hover:shadow-medium transition-all">
-      <CardContent className="p-6">
-        <div className="flex items-center gap-4">
-          <div className="rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm p-4 border border-white/30 px-[7px] py-[7px]">
-            <Icon className="h-8 w-8 text-primary" />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-baseline gap-3">
-              <p className="font-bold text-foreground text-2xl">{value}</p>
-              <p className="text-sm font-medium text-muted-foreground my-[8px]">{title}</p>
+  return <Card className="border-0 shadow-medium hover:shadow-large transition-all duration-300 bg-card">
+      <CardContent className="p-8">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="rounded-2xl bg-primary/10 p-3">
+              <Icon className="h-6 w-6 text-primary" />
             </div>
-            {trend && <p className="mt-2 text-xs text-primary font-medium">{trend}</p>}
+          </div>
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">{title}</p>
+            <div className="flex items-baseline gap-2">
+              <p className="text-4xl font-semibold text-foreground tracking-tight">{value}</p>
+            </div>
+            {trend && <p className="text-sm text-muted-foreground">{trend}</p>}
           </div>
         </div>
       </CardContent>
