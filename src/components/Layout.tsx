@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Home, Calendar, Users, Layers, BookOpen, DollarSign, MessageSquare, Award, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/CommunityConnect.png";
 const navigation = [{
   name: "Dashboard",
   href: "/",
@@ -50,7 +51,7 @@ export default function Layout({
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-3xl text-slate-600 font-extrabold">CommunityConnect</span>
+              <img src={logo} alt="CommunityConnect" className="h-12" />
             </Link>
 
             <nav className="hidden md:flex items-center gap-1">
